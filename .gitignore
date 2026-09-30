@@ -1,0 +1,21 @@
+# Raw recordings & converted data (large, regenerable by pipeline)
+sample/
+edf/
+_download/
+
+# Third-party tool repos & pretrained weights
+tools/
+
+# Pipeline run artifacts
+accusleepy_run/
+faster2_run/
+somnotate_run/
+results/
+
+# Internal session data
+.zcode/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
