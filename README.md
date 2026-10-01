@@ -79,14 +79,17 @@ paths/config at the top — edit the header block before reuse.
 
 ## Environments
 
-- **`eegemg`** (conda, Python 3.11) — the notebook kernel. numpy / scipy /
-  pandas / matplotlib / pyedflib / nbformat + `torch 2.14.0+cu130`
-  (`pip install torch==2.14.0+cu130 torchvision==0.29.0+cu130
-  --index-url https://download.pytorch.org/whl/cu130`). REST picks up the GPU
-  automatically and falls back to CPU.
-- **`somnotate39`** (Python 3.9) — somnotate depends on `pomegranate<1.0`,
-  which only has wheels for Python ≤ 3.9, so it runs as a *subprocess* of the
-  notebook (path configured in the config cell; `MPLBACKEND=Agg` is set to
+- **`eegemg`** (conda, Python 3.11) — the notebook kernel, pinned in
+  [`requirements.txt`](requirements.txt):
+  ```bash
+  pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu130  # GPU (CUDA 13)
+  ```
+  For a CPU-only machine, remove the two `+cu130` local version tags first —
+  REST picks up the GPU when available and falls back to CPU automatically.
+- **`somnotate39`** (Python 3.9) — pinned in
+  [`requirements-somnotate.txt`](requirements-somnotate.txt). somnotate
+  depends on `pomegranate<1.0`, which only has wheels for Python ≤ 3.9, so it
+  runs as a *subprocess* of the notebook (path configured in the config cell; `MPLBACKEND=Agg` is set to
   keep the headless run alive).
 - AccuSleePy model weights come from OSF (`python_format/models/ssann_4s.pth`);
   the code is compatible with torch 2.6+ despite the `torch>=2.13` pin.

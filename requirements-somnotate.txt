@@ -1,0 +1,13 @@
+# Separate environment for the somnotate subprocess ("somnotate39", Python 3.9).
+# pomegranate < 1.0 only has wheels for Python <= 3.9, which is why this cannot
+# live in the main environment. somnotate itself runs from its git clone
+# (tools/somnotate), it is not pip-installed.
+# Note: somnotate's data_io.check_dataframe dtype check needs a small patch
+# under pandas >= 2 (already applied in our clone).
+
+numpy==1.24.4
+scipy==1.13.1
+pandas==2.3.3
+scikit-learn==1.6.1
+matplotlib==3.9.4
+pomegranate==0.15.0

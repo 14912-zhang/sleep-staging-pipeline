@@ -1,0 +1,17 @@
+# Main environment ("eegemg", Python 3.11) — pipeline notebook + standalone scripts.
+#
+# GPU (CUDA 13) install:
+#   pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu130
+# CPU-only: drop the "+cu130" local version tags from the two torch lines
+# (REST falls back to CPU automatically) and run plain `pip install -r requirements.txt`.
+
+numpy==2.4.6
+scipy==1.17.1
+pandas==2.3.3
+matplotlib==3.11.2
+pyEDFlib==0.1.42
+pyarrow==25.0.1        # parquet export for AccuSleePy
+nbformat==5.11.1       # only needed by build_notebook.py
+mne==1.13.2            # EDF reading inside the REST package
+torch==2.14.0+cu130
+torchvision==0.29.0+cu130
