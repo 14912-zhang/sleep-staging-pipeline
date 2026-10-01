@@ -23,6 +23,19 @@ Intan DAT (int16, 30 kHz, one file per channel)
 On our recordings (2.7–2.8 h) the three methods agree on the order of
 Wake 39–43 % / NREM 55–59 % / REM 2–4 %, which serves as a cross-check.
 
+## Example output
+
+Per-method hypnograms (gray in the consensus row = methods disagree) for a
+2.7 h recording:
+
+![Sleep staging comparison: hypnograms of REST, somnotate and AccuSleePy plus consensus](docs/images/methods_comparison.png)
+
+Each run also produces one detailed figure per method — hypnogram, EEG
+spectrogram, and EEG/EMG waveforms with the scored states shaded (example:
+REST, Wake 38.9 % / NREM 58.9 % / REM 2.2 %):
+
+![REST staging detail: hypnogram, EEG spectrogram, EEG and EMG waveforms](docs/images/staging_REST.png)
+
 ## One-click notebook
 
 [`sleep_staging_pipeline.ipynb`](sleep_staging_pipeline.ipynb) runs everything:
